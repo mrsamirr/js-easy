@@ -25,4 +25,34 @@ let myObj = {
     name: "hitesh",
     age: 22,
 }
-// omdwenf
+
+const myFunction = function(){ // function object
+    console.log("Hello World")
+}
+
+console.log(typeof outsideTemp); // non primitive data types are always object
+
+// https://262.ecma-international.org/5.1/#sec-11.4.3
+
+// +++++++++++++++++++++++++++++++++++++
+
+// Stack (Primitive) , Heap(Non-Primitive)
+
+let myYoutubename = "unusualsmasher"
+
+let anothername = myYoutubename
+anothername = "chaiaurcode"
+
+console.log(myYoutubename)
+console.log(anothername)
+
+let userOne = {
+    email : "user@google.com",
+    upi : "user@ybl"
+}
+
+let userTwo = userOne
+userTwo.email = "hitesh@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
