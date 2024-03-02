@@ -12,4 +12,6 @@ const num = 123.8966
 console.log(num.toPrecision(4));
 
 const hundreds = 1000000
-console.log(hundreds.toLocaleString('en-IN'))
+// console.log(hundreds.toLocaleString('en-IN'))
+
+// ++++++++++++++++++++ MATHS ++++++++++++++++++++
