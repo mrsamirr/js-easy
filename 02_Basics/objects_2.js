@@ -74,3 +74,31 @@ var student = { // object name
   };
   
   console.log(student.fullName()); // Koushik Sadhu
+
+  const course = {
+   name: "JS in Hindi",
+   price: "1000",
+   courseInstructor: "Hitesh",
+  }
+
+  // course.courseInstructor4
+  // destructuring
+ 
+  const {courseInstructor: instructor} = course
+  const {price: p} = course
+  console.log(instructor);
+  console.log(p);
+
+//   {
+//    "name": "hitesh",
+//    "courseName": "JS",
+//    "price": "free"
+//   }
+
+//  intro to api => https://api.github.com/users/hiteshchoudhary 
+
+[ // array of objects
+   {},
+   {},
+   {}
+]
