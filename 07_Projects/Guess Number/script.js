@@ -1,3 +1,4 @@
+
 let randomNumber =  parseInt(Math.random() * 100 + 1);
 
 const submit = document.querySelector('#subt')
@@ -17,7 +18,7 @@ let playGame = true
 if (playGame){
     submit.addEventListener('click', function(e){
        e.preventDefault()
-       const guess = parseInt(userInput.value)
+       const guess = parseInt(userInput.value) // take value in int
        console.log(guess)
         validateGuess(guess)
     })
@@ -55,7 +56,7 @@ function checkGuess(guess){
 }
  
 function cleanupGuess(guess){
-  userInput.value = ''
+  userInput.value = ''  // erase all value
   guessSlot.innerHTML += `${guess}  `
   numGuess++;
   remaining.innerHTML = `${11 - numGuess}`

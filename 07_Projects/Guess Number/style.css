@@ -1,89 +1,162 @@
-*{
-    color:#fff;
-    font-family: sans-serif;
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    width: 200px;
-    max-width: 750px;
-    min-width: 480px;
-    margin: 0 auto;
-    background-color: #052c65;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #1976d2, #0d47a1);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.lastResult{
-    color: white;
-    padding: 7px;
+#wrapper {
+  max-width: 800px;
+  padding: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-.guesses{
-    color: white;
-    padding: 7px;
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  color: #90caf9;
 }
 
-button{
-    background-color: #141414;
-    color: #fff;
-    width: 250px;
-    height: 50px;
-    border-radius: 25px;
-    font-size: 30px;
-    border-style: none;
-    margin-top: 30px;
-    /* margin-left: 50px; */
+p {
+  margin-bottom: 30px;
+  font-size: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-#subt{
-    background-color: #161616;
-    color: #ffffff;
-    width: 200px;
-    height: 50px;
-    border-radius: 20px;
-    font-size: 20px;
-    margin-top: 50px;
-    border-style: none;
+.form {
+  margin-bottom: 40px;
 }
 
-#guessField{
-    color: #000;
-    width: 250px;
-    height: 50px;
-    font-size: 30px;
-    border-style: none;
-    margin-top: 25px;
-
-    border: 5px solid #76b5c5;
-    text-align: center;
+label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 24px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #90caf9;
 }
 
-#guess{
-    font-size: 55px;
-    margin-top: 120px;
-    color: #fff;
+input[type="text"],
+input[type="submit"] {
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  font-size: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s;
 }
 
-.guesses{
-    background-color: #76b5c5;
+input[type="text"]:focus,
+input[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-#wrapper{
-    box-sizing: border-box;
-    text-align: center;
-    width: 450px;
-    height: 550px;
-    /* background-color: 76b5c5; */
-    color: #fff;
-    font-size: 25px;
+input[type="submit"] {
+  background-color: #90caf9;
+  color: #0d47a1;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-h1{
-    background-color: #873e23;
-
-    color: #fff;
-    text-align: center;
+input[type="submit"]:hover {
+  background-color: #64b5f6;
 }
 
-p{
-    text-align: center;
-    font-size: 16px;
+.resultPass {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.lowOrHi {
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  color: #90caf9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#wrapper {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes rippleEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.ripple {
+  position: absolute;
+  background-color: rgba(144, 202, 249, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rippleEffect 0.6s linear;
+}
+
+/* Graphic Design Elements */
+#wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  filter: blur(10px);
+}
+
+#wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  filter: blur(10px);
 }
