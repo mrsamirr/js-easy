@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event KeyCodes</title>
+      <style>
+        table,
+        th,
+        td {
+          border: 1px solid #e7e7e7;
+          border-collapse: collapse;
+          padding: 8px;
+        }
+
+        .project {
+          background-color: #1c1c1c;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          height: 100vh;
+          font-family: Arial, sans-serif;
+        }
+
+        .color {
+          color: aliceblue;
+          display: flex;
+          flex-direction: row;
+          font-size: 18px;
+          font-weight: bold;
+          margin-top: 20px;
+        }
+
+        .key {
+          font-size: 24px;
+          font-weight: bold;
+          padding: 20px;
+          background-color: #333333;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          color: #ffffff; /* Add text color */
+          transition: background-color 0.3s ease; /* Add transition for smooth color change */
+        }
+
+        /* Add background colors for different keys */
+        .key[data-key="65"] {
+          background-color: #ff0000; /* Red */
+        }
+
+        .key[data-key="66"] {
+          background-color: #00ff00; /* Green */
+        }
+
+        .key[data-key="67"] {
+          background-color: #0000ff; /* Blue */
+        }
+
+        /* Add hover effect */
+        .key:hover {
+          background-color: #555555;
+          transform: scale(1.1); /* Add scale animation on hover */
+        }
+      </style>
+</head>
+<body>
+    <div class="project">
+        <div id="insert">
+            <div class="key">Press the key and watch magic
+            </div>
+        </div>
+    </div>
+</body>
+  <script src="script.js"></script>
+</html>
